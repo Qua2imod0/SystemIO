@@ -7,7 +7,7 @@ namespace SystemIO
     {
         static void Main(string[] args)
         {
-            String path1 = "D:\\Csharp";
+            String path1 = "D:\\Csharp\\abc";
             String[] dics1 = Directory.GetDirectories(path1); //获取子目录文件夹列表
             for (int i = 0; i < dics1.Length; i++)
             {
@@ -23,9 +23,19 @@ namespace SystemIO
                 Console.WriteLine(dics2[i]);
             }
 
+            Console.WriteLine("----------------------------");
+
+            List<string> fileList = new List<string>();
+            GetChildDirectoiresAndFiles(path1, fileList);
+
+            Console.WriteLine("----------------------------");
+
+            DirectoryInfo direc = new DirectoryInfo(path1);
+            direc.Delete(true);
+
         }
 
-        private static void GetChildDirectoiresAndFiles(string path, List<string> dictList)
+        private static void GetChildDirectoiresAndFiles(string path, List<string> dictList)//递归获取子目录所有文件列表 
         {
             DirectoryInfo dict = new DirectoryInfo(path);
 

@@ -8,12 +8,6 @@ namespace SystemIO
         static void Main(string[] args)
         {
             String path1 = "D:\\Csharp\\abc";
-<<<<<<<<< Temporary merge branch 1
-            String[] dics1 = Directory.GetDirectories(path1);
-=========
-<<<<<<<<< Temporary merge branch 1
-            String[] dics1 = Directory.GetDirectories(path1);
-=========
             String[] dics1 = Directory.GetDirectories(path1); //获取子目录文件夹列表
             for (int i = 0; i < dics1.Length; i++)
             {
@@ -21,10 +15,6 @@ namespace SystemIO
             }
 
             Console.WriteLine("----------------------------");
-
-
-            Console.WriteLine("----------------------------");
-
             List<string> fileList = new List<string>();
             GetChildDirectoiresAndFiles(path1, fileList);
 
@@ -33,12 +23,7 @@ namespace SystemIO
             DirectoryInfo direc = new DirectoryInfo(path1);
             direc.Delete(true);
             for (int i = 0; i < dics2.Length; i++)
-<<<<<<<<< Temporary merge branch 1
-=========
             }
-<<<<<<<<< Temporary merge branch 1
-=========
-
         }
 
         private static void GetChildDirectoiresAndFiles(string path, List<string> dictList)//递归获取子目录所有文件列表 
